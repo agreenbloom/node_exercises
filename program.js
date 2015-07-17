@@ -12,10 +12,24 @@
 // console.log(result);
 
 // Exercise 3 - My First I/O
+// var fs = require('fs')
+
+// var buf = fs.readFile(process.argv[2])
+
+// var str = buf.toString()
+
+// console.log(str.split('\n').length - 1);
+
+// Exercise 4
+
 var fs = require('fs')
 
-var buf = fs.readFileSync('test')
+fs.readFile(process.argv[2], function callback (err, buf){
+  var str = buf.toString()
 
-var str = buf.toString()
+  console.log(str.split('\n').length -1)
+});
 
-console.log(str.split('\n').length - 1);
+
+
+// console.log(process.argv)
