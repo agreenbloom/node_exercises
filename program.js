@@ -22,14 +22,29 @@
 
 // Exercise 4
 
-var fs = require('fs')
+// var fs = require('fs')
 
-fs.readFile(process.argv[2], function callback (err, buf){
-  var str = buf.toString()
+// fs.readFile(process.argv[2], function callback (err, buf){
+//   var str = buf.toString()
 
-  console.log(str.split('\n').length -1)
+//   console.log(str.split('\n').length -1)
+// });
+
+
+
+// Exercise 5
+
+
+var fs = require('fs');
+var path = require('path')
+
+var file = process.argv[2];
+var extention = '.' + process.argv[3];
+
+fs.readdir(file, function (err, list) {
+ for (i = 0; i < process.argv.length; i++) {
+    if (path.extname(list[i]) == extention) {
+        console.log(list[i]);
+    };
+  };
 });
-
-
-
-// console.log(process.argv)
